@@ -45,6 +45,7 @@
 .main-register  .form-register .divs-register .control{
     padding: 8px 8px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .main-register .form-register .vender-comprar{
@@ -76,6 +77,20 @@
 
 .main-register .form-register .divs-register .title-profile{
     margin-bottom: 4px;
+}
+
+.main-register .form-register .divs-register .pass{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    position: relative;
+}
+
+.main-register .form-register .divs-register .pass i{
+    width: 5%;
+    position: absolute;
+    top: 10px;
+    right:15px;
 }
 
 .main-register .form-register .div-accept{

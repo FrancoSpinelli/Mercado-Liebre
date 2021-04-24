@@ -53,7 +53,9 @@
 }
 
 .header .bot-nav{
-    display: none;
+    /* display: none; */
+    display: flex;
+    justify-content: space-between;
 }
 
 .header .bot-nav ul{

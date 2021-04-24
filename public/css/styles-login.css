@@ -35,9 +35,25 @@
     flex-direction: column;
 }
 
+.main-login .form-login .divs-login .pass{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    position: relative;
+}
+
+.main-login .form-login .divs-login .pass i{
+    width: 5%;
+    position: absolute;
+    top: 10px;
+    right:15px  ;
+}
+
+
 .main-login .form-login .control{
     padding: 8px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .main-login .form-login label{
