@@ -1,0 +1,98 @@
+
+@import url(/css/header.css); /* HEADER */
+
+@import url(/css/footer.css); /* FOOTER */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN - LOGIN */
+
+.main-login{
+    background-color: #ebebeb;
+}
+
+.main-login .form-login{
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-login .form-login .main-title{
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: solid 1px #666;
+    margin-bottom: 10px;
+}
+
+.main-login .form-login .divs-login{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-login .form-login .control{
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.main-login .form-login label{
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.main-login .form-login .div-remember-user{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    width: 100%; 
+}
+
+.main-login .form-login .div-remember-user a{
+    text-align: right;
+}
+
+.main-login .form-login .div-remember-user label{
+    font-style: normal;
+    font-weight: normal;
+}
+
+.main-login .form-login .buttons{
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.main-login .form-login .buttons .button{
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.main-login .register{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+/* MEDIA QUERY 1*/
+
+@media (min-width: 481px){
+    .main-login .form-login {
+        width: 65%;
+    }
+}
+
+
+/* MEDIA QUERY 2 */
+
+@media (min-width: 769px){
+    .main-login .form-login{
+        width: 50%;
+    }
+}
