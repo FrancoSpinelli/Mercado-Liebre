@@ -1,0 +1,120 @@
+
+@import url(/css/header.css); /* HEADER */
+
+@import url(/css/footer.css); /* FOOTER */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.banner{
+    width: 100%;
+}
+
+/* MAIN - FORM */
+
+.main-register{
+    background-color: #ebebeb;
+}
+
+.main-register .form-register{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.main-register .form-register .main-title{
+    padding: 15px 0;
+    border-bottom: solid 1px #666;
+    margin-bottom: 10px;
+}
+
+.main-register  .form-register .divs-register{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.main-register  .form-register .divs-register label{
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.main-register  .form-register .divs-register .control{
+    padding: 8px 8px;
+    border-radius: 8px;
+}
+
+.main-register .form-register .vender-comprar{
+    margin: 20px 0 20px 0;
+}
+
+.main-register .form-register .vender-comprar .title{
+    font-weight: bolder;
+}
+
+.main-register .form-register .vender-comprar label{
+    margin-right: 10px;
+}
+
+.main-register .form-register .categorias{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.main-register .form-register .categorias .title{
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.main-register .form-register .categorias .divs-categorías{
+    padding: 3px 0 ;
+}
+
+.main-register .form-register .divs-register .title-profile{
+    margin-bottom: 4px;
+}
+
+.main-register .form-register .div-accept{
+    margin-top: 20px;
+}
+
+.main-register .form-register .div-accept div{
+    margin: 7px 0;
+}
+
+.main-register  .form-register .divs-buttons{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+}
+
+.main-register  .form-register .divs-buttons button{
+    padding: 10px 5px;
+    border-radius: 8px;
+}
+
+
+
+/* MEDIA QUERY 1*/
+
+@media (min-width: 481px){
+    .main-register .form-register {
+        width: 65%;
+    }
+}
+
+
+/* MEDIA QUERY 2 */
+
+@media (min-width: 769px){
+    .main-register .form-register{
+        width: 50%;
+    }
+}
+
