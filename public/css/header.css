@@ -1,42 +1,48 @@
+*{
+    box-sizing: content-box;
+    margin: 0;  
+    padding: 0;
+}
+
 /* HEADER */
 
 .header{
     background-color: #EAC926;
-    
 }
 
 .header .top-nav{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.header .top-nav a{
+    max-width: 130px;
 }
 
 .header .top-nav .logo-ml{
-    width: 43%;
+    width: 100%;
 }
 
-.header .top-nav .search{
+.header .top-nav .searcher{
     display: flex;
-    flex-wrap: nowrap;
-    align-self: center;
-    justify-content: space-between;
-    background: white;
-    color: #666;
-    margin: 0 ;
-    border-radius: 5px;
-    border: 1px black solid;
-    padding: 5px 10px;
-    width: 43%;
-    max-height: 35px;
-    font-size: 70%;
+    justify-content: space-around;
+    position: relative;
+    width: 60%;
 }
 
-.header .top-nav .search p{
-    overflow: auto;
+.header .top-nav .searcher .control{
+    width: 90%;
+    padding: 0 5%;
+    border-radius: 8px;
 }
 
-.header .top-nav .search i{
-    margin: auto 0px;
+.header .top-nav .searcher i{
+    width: 5%;
+    position: absolute;
+    top: 10px;
+    right:15px;
 }
 
 .header .top-nav .cuotas{
@@ -47,8 +53,7 @@
 }
 
 .header .bot-nav{
-    display: flex;
-    justify-content: space-between;
+    display: none;
 }
 
 .header .bot-nav ul{
@@ -103,9 +108,14 @@
         justify-self: center;
     }
 
-    .header .top-nav .search{
-        font-size: 60%;
-        width: 38%;
+    .header .top-nav .searcher .control{
+        width: 80%;
+        padding: 0 5%;
+    }
+
+    .header .top-nav .searcher i{
+        width: 10%;
+        top: 8px;
     }
 
     .header .top-nav .cuotas{
@@ -173,11 +183,15 @@
 @media (min-width: 769px){
 
 
-    .header .top-nav .search{
-        font-size: 100%;
-        width: 50%;
+    .header .top-nav .searcher .control{
+        width: 95%;
+        padding: 0 2%;
     }
 
+    .header .top-nav .searcher i{
+        width: 2%;
+    }
+ 
     .header .top-nav .cuotas{
         font-size: 180%;
         width: 25%;
