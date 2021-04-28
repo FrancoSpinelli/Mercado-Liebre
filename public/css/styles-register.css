@@ -13,6 +13,7 @@
 
 .banner{
     width: 100%;
+    margin-top: 200px;
 }
 
 
@@ -121,6 +122,11 @@
 /* MEDIA QUERY 1*/
 
 @media (min-width: 481px){
+
+    .banner{
+        margin-top: 0 ;
+    }
+
     .main-register .form-register {
         width: 65%;
     }

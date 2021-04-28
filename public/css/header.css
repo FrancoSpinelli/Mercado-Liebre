@@ -97,6 +97,7 @@
 
     .header{
         position: static;
+        height:max-content;
     }
 
     .header .top-nav{
@@ -189,6 +190,7 @@
 
 @media (min-width: 769px){
 
+    
 
     .header .top-nav .searcher .control{
         width: 95%;
