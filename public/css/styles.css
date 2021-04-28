@@ -105,136 +105,11 @@
     
 }
 
-/* FOOTER */
-
-.footer{
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-weight: 300;
-}
-
-.footer ul{
-    list-style-type: none;
-    margin: 0 ;
-    padding: 0 35px;
-}
-
-.footer ul li{
-    margin-top: 45px;
-}
-
-.footer ul li i{
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #1259ce;
-}
-
-.footer ul li h4{
-    margin: 0px;
-}
-
-.footer ul li p{
-    margin: 0px;
-    text-align: unset;
-    color: #666;
-}
-
-.footer ul .copyright{
-    padding: 45px 0 20px 0;
-}
 
 
 /* MEDIA QUERY 1*/
 
 @media (min-width: 481px){
-
-    .header{
-        position: static;
-    }
-    
-    .header .top-nav{
-        display: flex;
-        flex-wrap: nowrap;
-        width: 100%;
-        justify-content: space-around;
-        margin: auto;
-        padding: 10px 0 ;
-    }
-
-    .header .top-nav .logo-ml{
-        display: flex;
-        width: 100%;
-        max-width: 150px;
-        justify-self: center;
-    }
-
-    .header .top-nav .searcher .control{
-        width: 80%;
-        padding: 0 5%;
-    }
-
-    .header .top-nav .searcher i{
-        width: 10%;
-        top: 8px;
-    }
-
-    .header .top-nav .cuotas{
-        width: 33%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .header .top-nav .cuotas i{
-        align-self: center;
-        justify-self: flex-end;
-        margin:  0 5px;
-        font-size: 75%;
-    }
-
-    .header .top-nav .cuotas p{
-        text-align: center;
-        font-size: 50%;
-        align-self: center;
-        justify-self: flex-start;
-    }
-
-    .header .bot-nav{
-        display: flex;
-        justify-content: space-around;
-        margin: auto;
-        width: 95%;
-    }
-
-    .header .bot-nav .nav-bar, .header .bot-nav .login-bar{
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        width: 100%;
-        margin: auto;
-        font-size: 60%;
-    }
-
-    .header .bot-nav .nav-bar{
-        justify-content: flex-start;
-    }
-
-    .header .bot-nav .nav-bar li{
-        margin-right: 1em;
-    }
-
-    .header .bot-nav .login-bar{
-        justify-content: flex-end;
-    }
-
-    .header .bot-nav .login-bar li{
-        margin-left: 1em;
-    }
-
-    .header .bars{
-        display: none;
-    }
 
     .banner{
         margin-top: 0 ;
@@ -285,40 +160,6 @@
 /* MEDIA QUERY 2 */
 
 @media (min-width: 769px){
-
-    .header .top-nav .searcher .control{
-        width: 95%;
-        padding: 0 2%;
-    }
-
-    .header .top-nav .searcher i{
-        width: 2%;
-    }
- 
-    .header .top-nav .cuotas{
-        font-size: 180%;
-        width: 25%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .header .bot-nav{
-        padding: 10px 0 5px 0;
-    }
-
-    .header .bot-nav ul li{
-        margin: 0 12px ;
-    }
-
-    .header a{
-        font-size: 160%;
-    }
-
-    .header .bars{
-        display: none;
-    }
     
     .main section{
         display: flex;
