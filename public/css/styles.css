@@ -48,6 +48,8 @@
 
 .main section img{
     width: 90%;
+    height: 90%;
+    max-height: 300px;
     max-width: 300px;
 }
 
@@ -147,8 +149,12 @@
         font-weight: bolder;
     }
 
+    .main section article:hover {
+        box-shadow: 0px 0px 50px rgb(100, 100, 100);
+    }
+
     .main section article:hover .caracteristicas{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        box-shadow: 0px 0px 20px rgb(100, 100, 100);
     }
 
     .main section .article .caracteristicas i:hover{
