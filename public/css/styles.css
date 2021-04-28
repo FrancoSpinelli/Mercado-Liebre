@@ -8,7 +8,10 @@
 
 .header{
     background-color: #EAC926;
-    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .header .top-nav{
@@ -45,8 +48,6 @@
     top: 10px;
     right:15px;
 }
-
-
 
 .header .top-nav .cuotas{
     display: flex;
@@ -88,6 +89,7 @@
 
 .banner{
     width: 100%;
+    margin-top: 224px ;
 }
 
 /* MAIN */
@@ -174,6 +176,7 @@
 .main section article .caracteristicas .descripción{
     font-size: 16px;
     display: none;
+    transition: all 5000ms;
 }
 
 /* FOOTER */
@@ -219,6 +222,9 @@
 
 @media (min-width: 481px){
 
+    .header{
+        position: static;
+    }
     
     .header .top-nav{
         display: flex;
@@ -304,6 +310,10 @@
         display: none;
     }
 
+    .banner{
+        margin-top: 0 ;
+    }
+
     .main section .title{
         text-align: left;
         margin-left: 20px;
@@ -321,14 +331,19 @@
     
     .main .ultima-visita article, .ofertas article{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    transition: all 4ms;
     }
 
-    .main section article .caracteristicas .descripción{
+    .main section article:hover .caracteristicas .descripción{
         display: block;
         text-align: start;
         margin: 0 0 10px 8px;
     }
 
+    .main section article:hover .caracteristicas{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    
 }
 
 
@@ -382,10 +397,6 @@
 
     .main .ultima-visita article, .ofertas article{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
-    .main section article .caracteristicas .descripción{
-        display: block;
     }
 }
 
