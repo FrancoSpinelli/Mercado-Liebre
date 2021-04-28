@@ -8,6 +8,10 @@
 
 .header{
     background-color: #EAC926;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .header .top-nav{
@@ -91,7 +95,10 @@
 
 @media (min-width: 481px){
 
-    
+    .header{
+        position: static;
+    }
+
     .header .top-nav{
         display: flex;
         flex-wrap: nowrap;
