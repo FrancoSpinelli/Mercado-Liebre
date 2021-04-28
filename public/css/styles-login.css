@@ -53,7 +53,6 @@
     right:5px;
 }
 
-
 .main-login .form-login .control{
     padding: 8px 8px;
     border-radius: 8px;
@@ -114,6 +113,11 @@
     }
     .main-login .form-login .nombre{
         width: 95.5%;
+    }
+
+    .main-login .form-login .buttons .button:hover{
+        background-color: #0022AA;
+        color: white;
     }
 }
 
