@@ -124,6 +124,11 @@
     .main-register .form-register {
         width: 65%;
     }
+
+    .main-register  .form-register .divs-buttons #create:hover{
+        background-color: #0022AA;
+        color: white;
+    }
 }
 
 
