@@ -36,6 +36,13 @@
     width: 60%;
 }
 
+.header .top-nav .searcher .form-searcher{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+}
+
 .header .top-nav .searcher .control{
     width: 90%;
     padding: 0 5%;
