@@ -103,7 +103,6 @@
 @media (min-width: 481px){
 
     .header{
-        position: static;
         height:max-content;
     }
 
