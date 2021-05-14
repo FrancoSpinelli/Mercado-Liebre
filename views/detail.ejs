@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado-Liebre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main class="main">
+        <h2>HOLA <%= usuarioSeleccionado[0].userName %>! </h2>
+        <br>
+
+        <section class="section">
+            
+            <h3>Información de la cuenta</h3>
+            <br>
+
+            <form action="/users/edit/<%= usuarioSeleccionado[0].userName %>?_method=PUT" method="POST">
+
+            <div class="divs-register">
+                <label for="">Nombre y apellido:</label>
+                <%= usuarioSeleccionado[0].name %>
+            </div>
+            <br>
+            <div class="divs-register">
+                <label for="">Correo electrónico:</label>
+                <%= usuarioSeleccionado[0].email %>
+            </div>
+            <br>
+            <div class="divs-register">
+                <label for="">Fecha de nacimiento:</label>
+                <%= usuarioSeleccionado[0].birthday %>
+            </div>
+            <br>
+            <div class="divs-register">
+                <label for="">Domicilio:</label>
+                <%= usuarioSeleccionado[0].adress %>
+            </div>
+
+            <br><br>
+            <button type="submit">Editar</button>
+
+        </form>
+                
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

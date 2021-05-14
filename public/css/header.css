@@ -12,6 +12,7 @@
     top: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 0 5px 10px #5f6368;
 }
 
 .header .top-nav{

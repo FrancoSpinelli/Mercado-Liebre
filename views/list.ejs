@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado-Liebre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main class="main">
+        <h2>Usuarios registrados</h2>
+
+        <section class="section">
+            
+                <% for (let i = 0 ; i < usuariosRegistrados.length; i++) { %>
+                    <article class="usuarios">
+                        <p> <strong><%=usuariosRegistrados[i].userName%>:</strong>  </p>
+                        <a href="/users/detail/<%= usuariosRegistrados[i].userName %>"><%= usuariosRegistrados[i].name %></a>, <%= usuariosRegistrados[i].email %>
+                        <br>
+                    </article>   
+                <% } %>
+
+                <form action="/users/search" method="GET">
+                    <input type="text" name="searcher" id="">
+                    <button type="submit">Enviar</button>
+                </form>
+
+
+                
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
