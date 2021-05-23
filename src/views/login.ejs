@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-login.css">
+</head>
+<body>
+    
+    <%- include('./partials/header.ejs') %>
+    
+    <main class="main-login">
+        <img class="banner" src="/img/img-home-banner.jpg" alt="Banner">
+        <form class="form-login" action="login">
+            <h2 class="main-title">Ingresá con tu usuario</h2>
+            <div class="divs-login">
+                <label for="">Nombre de usuario</label>
+                <input required type="text" name="userName" id="" class="nombre">
+            </div>
+            <div class="divs-login">
+                <label for="">Contraseña</label>
+                <div class="pass">
+                    <input required type="password" name="pass" id="" class="control"><i class="fas fa-eye-slash"></i>
+                </div>
+            </div>
+            <div class="div-remember-user">
+                <div>
+                    <input type="checkbox" name="remember-user" id="">
+                    <label for="">Recordar usuario</label>
+                </div>
+                <a href="#">Recuperar contraseña</a>
+            </div>
+            <div class="buttons">
+                <button class="button" type="submit">Ingresar</button>
+            </div>
+        </form>
+        <div class="register">
+            <label for="">¿Aún no tenés cuenta?¡<a href="/users/register">Registrate</a>!</label>
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mercado-Liebre</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+		<!-- Bootstrap Grid Stylesheet -->
+		<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+		<!-- Own Stylesheet -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/list.css">
+		<link rel="stylesheet" href="/css/editProducts.css">
+		
+		
+	</head>
+<body>
+	<!-- Header -->
+	<%- include('./partials/header.ejs') %>
+	<!-- /Header -->
+
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Estás editando: <i><%= productoSeleccionado[0].name %></i></h2>
+			</div>
+		</div>
+		<div class="col-12">
+			<form action="/products/edit/<%= productoSeleccionado[0].id %>?_method=PUT" method="POST">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<label for="name" class="form-label">Nombre del producto:  </label>
+						<input type="text" id="name" name="name" value="<%= productoSeleccionado[0].name %>" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="price" name="price" value="<%= productoSeleccionado[0].price %>" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="discount" class="form-label">Descuento:</label>
+						<input type="text" id="discount" name="discount" value="<%= productoSeleccionado[0].discount %>" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							<% if (productoSeleccionado[0].category === "in-sale") {%> 
+								<option selected value="in-sale">En oferta</option>
+								<option value="visited" >Últimos agregados</option>
+							<% } else {%> 
+								<option value="in-sale">En oferta</option>
+								<option selected value="visited" >Últimos agregados</option>
+							<% }; %>
+						</select>
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label">Descipción:</label>
+						<textarea name="description" id="description" class="form-input"><%= productoSeleccionado[0].description %></textarea>
+					</div>
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Guardar producto</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+
+</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

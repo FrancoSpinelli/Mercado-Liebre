@@ -1,32 +1,35 @@
-@import url(/css/header.css); /* HEADER */
+@import url(/css/header.css);
 
-@import url(/css/footer.css); /* FOOTER */
+@import url(/css/footer.css);
 
 body{
     text-align: center;
 }
 
+#fotoPerfil{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
 
 h2{
     margin-top: 140px;
 }
 
 .section{
-    margin: 0;
+    max-width:max-content;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
+} 
 
 .usuarios{
     padding: 10px;
-    border: red solid 1px;
     display: flex;
-    width: 30%;
-    margin: 10px auto;
+    margin: 10px;
     border-radius: 5px;
-
-
+    align-items: center;
 }
 
 .usuarios p{

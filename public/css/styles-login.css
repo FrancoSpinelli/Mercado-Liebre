@@ -22,7 +22,7 @@
 
 .main-login .form-login{
     width: 90%;
-    margin: 10px auto;
+    margin: 100px auto 0;
     display: flex;
     flex-wrap: wrap;
 }

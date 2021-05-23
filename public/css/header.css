@@ -1,5 +1,5 @@
 *{
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin: 0;  
     padding: 0;
 }
@@ -200,7 +200,7 @@
     
 
     .header .top-nav .searcher .control{
-        width: 95%;
+        width: 100%;
         padding: 0 2%;
     }
 

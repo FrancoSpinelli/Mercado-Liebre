@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERCADO-LIEBRE</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    
+    <main class="main">
+        <img class="banner" src="/img/img-home-banner.jpg" alt="Banner">
+        <!-- ULTIMA VISITA -->
+        <section class="ultima-visita">
+            <h2 class="title">Basado en tu última visita</h2>
+
+            <% for (let i = 0; i < productosUltimasVisitas.length; i++) {%> 
+            <article class="article">
+                <a href="/products/detail/<%= productosUltimasVisitas[i].id %>">
+                    <img src="/img/imgArticulos/<%= productosUltimasVisitas[i].image %> " alt="<%= productosUltimasVisitas[i].description %>">
+                    <div class="caracteristicas">
+                        <i class="fas fa-truck"></i>
+                        <% if(productosUltimasVisitas[i].discount != 0) {%> 
+                        <div class="precio-descuento">
+                        <p class="precio">$<%= productosUltimasVisitas[i].price %></p>
+                        <p class="descuento"><%= productosUltimasVisitas[i].discount %> % off</p>
+                        </div>
+                        <% } else {%>
+                            <div class="precio-descuento">
+                                <p class="precio">$<%= productosUltimasVisitas[i].price %></p>
+                                <p class="descuento"></p>
+                            </div>
+                            <% } %> 
+                        <p class="descripción"><%= productosUltimasVisitas[i].name %></p>
+                    </div>
+                </a>
+            </article>
+            <% } %> 
+        </section>
+
+        <!-- OFERTAS -->
+        <section id="ofertas" class="ofertas">
+            <h2 class="title">Ofertas</h2>
+            <% for (let i = 0; i < productosOfertas.length; i++) {%> 
+                <article class="article">
+                    <a href="/products/detail/<%= productosOfertas[i].id %>">
+                        <img src="/img/imgArticulos/<%= productosOfertas[i].image %> " alt="<%= productosOfertas[i].description %>">
+                        <div class="caracteristicas">
+                            <i class="fas fa-truck"></i>
+                            <div class="precio-descuento">
+                            <p class="precio">$<%= productosOfertas[i].price %></p>
+                            <p class="descuento"><%= productosOfertas[i].discount %> % off</p>
+                            </div>
+                            <p class="descripción"><%= productosOfertas[i].name %></p>
+                        </div>
+                    </a>
+                </article> 
+                <% } %> 
+        </section>
+    </main>
+    
+    
+<%- include('./partials/footer.ejs') %>
+
+</body>
+</html>

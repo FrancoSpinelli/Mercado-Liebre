@@ -6,6 +6,7 @@ const methodOverride = require ('method-override');
 // Configuración de EJS
 
 app.set ('view engine', 'ejs');
+app.set('views', path.join(__dirname, './src/views'))
 
 
 // Configuración de METODOS 
@@ -29,14 +30,15 @@ app.use(express.static(publicPath));
 
 // Rutas hacia los módulos 
 
-let rutasMain = require ('./routes/main.js');
-let rutasUsers = require ('./routes/users.js');
-
+let rutasMain = require ('./src/routes/main.js');
+let rutasUsers = require ('./src/routes/users.js');
+let rutasProducts = require ('./src/routes/products.js');
 
 // Respuestas con los prefijos '/...'
 
 app.use('/', rutasMain);
 app.use('/users', rutasUsers);
+app.use('/products', rutasProducts)
 
 
 

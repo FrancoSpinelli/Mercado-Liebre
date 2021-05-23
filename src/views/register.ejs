@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Registrate!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-register.css">
+</head>
+<body> 
+
+<%- include('./partials/header.ejs') %> 
+
+
+    <main class="main-register">
+        <img class="banner" src="/img/img-home-banner.jpg" alt="Banner">
+
+        
+        <form class="form-register" action="/users/register/" method="post" enctype="multipart/form-data">
+            <h2 class="main-title">Completá tus datos</h2>
+            <div class="divs-register">
+                <label for="">Nombre y apellido</label>
+                <input required type="text" name="name" id="" class="control" placeholder="Juan Fernandez">
+            </div>
+            <div class="divs-register">
+                <label for="">Nombre de usuario</label>
+                <input required type="text" name="userName" id="" class="control" placeholder="JuanFer3009">
+            </div>
+            <div class="divs-register">
+                <label for="">Correo electrónico</label>
+                <input required type="email" name="email" id="" class="control" placeholder="Juan.Fernandes3009@hotmail.com">
+            </div>
+            <div class="divs-register">
+                <label for="">Fecha de nacimiento</label>
+                <input required type="date" name="birthday" id="" class="control">
+            </div>
+            <div class="divs-register">
+                <label for="">Domicilio</label>
+                <input type="text" name="adress" id="" class="control" placeholder="Calle Falsa 1234">
+            </div>
+            <div class="divs-register">
+                <label class="title-profile" for="">Foto de perfil</label>
+                <input type="file" name="fotoPerfil" id="">
+            </div>
+            <div class="vender-comprar">
+                <label class="title" for="">Está buscando:</label>
+                <input type="radio" name="venderComprar" value= "vender" id="vender" checked> 
+                <label for="vender">Vender</label>
+                <input type="radio" name="venderComprar" id="comprar" value="comprar">
+                <label for="comprar">Comprar</label>
+            </div>
+            <div class="categorias">
+                <label class="title" id="" for="">Categorías de interés:</label>
+                <div class="divs-categorías">
+                    <input type="checkbox" name="electro" id="electro">
+                    <label for="electro">Electro</label>
+                </div>
+                <div class="divs-categorías">
+                    <input type="checkbox" name="moda" id="moda">
+                    <label for="moda">Moda</label>
+                </div>
+                <div class="divs-categorías">
+                    <input type="checkbox" name="hogar" id="hogar">
+                    <label for="hogar">Hogar</label>
+                </div>
+                <div class="divs-categorías">
+                    <input type="checkbox" name="jugueteria" id="jugueteria">
+                    <label for="jugueteria">Juguetería</label>
+                </div>
+                <div class="divs-categorías">
+                    <input type="checkbox" name="vidaSana" id="vida-sana">
+                    <label for="vida-sana">Vida sana</label>
+                </div>
+            </div>
+            <div class="divs-register">
+                <label for="">Contraseña</label>
+                <div class="pass">
+                    <input type="password" name="pass" id="" class="control">
+                    <i class="fas fa-eye-slash"></i>
+                </div>
+                <label required for="">Confirmar contraseña</label>
+                <div class="pass">
+                    <input type="password" name="passRepeat" id="" class="control">
+                    <i class="fas fa-eye-slash"></i>
+                </div>
+                
+            </div>
+            <div class="div-accept">
+                <div class="newlletter">
+                    <input type="checkbox" name="newletter" id="newletter">
+                    <label for="newletter">Deseo recibir información sobre los nuevos productos.</label>
+                </div>
+                <div class="terminos-condiciones">
+                    <input type="checkbox" name="terminosCondiciones" id="terminos-condiciones">
+                    <label required for="terminos-condiciones">He leído y acepto los <a href="#">Términos y Condiciones</a>.</label>
+                </div>
+            </div>
+            <div class="divs-buttons">
+                <button id="create" class="buttons" type="submit">Crear cuenta</button>
+                <button class="buttons" type="reset">Borrar todo</button>
+            </div>
+        </form>
+        
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
+
