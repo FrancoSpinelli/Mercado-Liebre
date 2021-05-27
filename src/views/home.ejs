@@ -27,12 +27,12 @@
                         <i class="fas fa-truck"></i>
                         <% if(productosUltimasVisitas[i].discount != 0) {%> 
                         <div class="precio-descuento">
-                        <p class="precio">$<%= productosUltimasVisitas[i].price %></p>
+                        <p class="precio">$<%= toThousand(productosUltimasVisitas[i].price) %></p>
                         <p class="descuento"><%= productosUltimasVisitas[i].discount %> % off</p>
                         </div>
                         <% } else {%>
                             <div class="precio-descuento">
-                                <p class="precio">$<%= productosUltimasVisitas[i].price %></p>
+                                <p class="precio">$<%= toThousand(productosUltimasVisitas[i].price) %></p>
                                 <p class="descuento"></p>
                             </div>
                             <% } %> 
@@ -53,7 +53,7 @@
                         <div class="caracteristicas">
                             <i class="fas fa-truck"></i>
                             <div class="precio-descuento">
-                            <p class="precio">$<%= productosOfertas[i].price %></p>
+                            <p class="precio">$<%= toThousand(productosOfertas[i].price) %></p>
                             <p class="descuento"><%= productosOfertas[i].discount %> % off</p>
                             </div>
                             <p class="descripción"><%= productosOfertas[i].name %></p>

@@ -41,19 +41,19 @@
 					<article class="product-detail-info">
 						<h3 class="product-detail-title"><%= productoSeleccionado[0].name %></h3>
 
-						<% if (productoSeleccionado[0].discount !== 0) {%> 
+						<% if (productoSeleccionado[0].discount != 0) {%> 
 							<p class="product-detail-price small">
-								<span>$<%= productoSeleccionado[0].price %></span>
+								<span>$<%= toThousand(productoSeleccionado[0].price )%></span>
 								/
 								<b><%= productoSeleccionado[0].discount %>% OFF</b>
 							</p>
 							<p class="product-detail-price">
-								$<%= (productoSeleccionado[0].price * (1-(productoSeleccionado[0].discount/100))) %> 
+								$<%= toThousand((productoSeleccionado[0].price * (1-(productoSeleccionado[0].discount/100)))) %> 
 							</p>
 							<% } else {%> 
 							
 							<p class="product-detail-price">
-								$ <%= productoSeleccionado[0].price %>
+								$ <%= toThousand(productoSeleccionado[0].price) %>
 							</p>
 							<% } %> 
 

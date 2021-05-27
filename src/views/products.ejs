@@ -24,7 +24,7 @@
 							<img src="/images/products/<%= productosUltimosVisitados[i].image %> " alt="imagen de producto">
 						</figure>
 						<article class="product-box_data">
-							<h2>$<%= productosUltimosVisitados[i].price %></h2>
+							<h2>$<%= toThousand(productosUltimosVisitados[i].price) %></h2>
 							<span><%= productosUltimosVisitados[i].discount %>% OFF</span>
 							<p><%= productosUltimosVisitados[i].name %></p>
 							<i class="fas fa-truck"></i>
@@ -44,7 +44,7 @@
 							<img src="/images/products/<%= productosOfertas[i].image %> " alt="imagen de producto">
 						</figure>
 						<article class="product-box_data">
-							<h2>$<%= productosOfertas[i].price %></h2>
+							<h2>$<%= toThousand(productosOfertas[i].price) %></h2>
 							<span><%= productosOfertas[i].discount %>% OFF</span>
 							<p><%= productosOfertas[i].name %></p>
 							<i class="fas fa-truck"></i>

@@ -9,7 +9,6 @@ let usuariosRegistrados = JSON.parse(fs.readFileSync('./src/data/usuariosRegistr
 
 let usersController = {
     list: (req,res) => {
-        console.log(usuariosRegistrados)
         res.render('list.ejs', {usuariosRegistrados: usuariosRegistrados})
     },
 
