@@ -2,6 +2,9 @@ const express = require ('express');
 const app = express();
 const path = require ('path');
 const methodOverride = require ('method-override');
+const expressValidator = require ('express-validator');
+const session = require('express-session');
+
 
 // Configuración de EJS
 
@@ -27,6 +30,9 @@ app.listen(process.env.PORT || 3000, function(){
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
+// Configuración de Session
+
+app.use(session( {secret: "Nuestro mensaje secreto"}));
 
 // Rutas hacia los módulos 
 
@@ -39,6 +45,3 @@ let rutasProducts = require ('./src/routes/products.js');
 app.use('/', rutasMain);
 app.use('/users', rutasUsers);
 app.use('/products', rutasProducts)
-
-
-

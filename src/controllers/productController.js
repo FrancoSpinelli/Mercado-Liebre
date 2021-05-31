@@ -2,6 +2,7 @@ const path = require ('path');
 const fs = require ('fs');
 const data = require('../utils/dataAccessModel');
 
+
 const readJSON = (archivo)=>{
     let productos = JSON.parse(fs.readFileSync(`./src/data/${archivo}`, {encoding: 'utf-8'}));
     return productos

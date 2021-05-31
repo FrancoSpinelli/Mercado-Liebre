@@ -42,6 +42,7 @@
     margin-top: 10px;
     font-style: italic;
     font-weight: bolder;
+    font-size: 18px;
 }
 
 .main-register  .form-register .divs-register .control{
@@ -116,6 +117,11 @@
     border-radius: 8px;
 }
 
+.main-register  .form-register .errors{
+    color: red;
+    font-weight: bolder;
+    margin-top: 5px;
+}
 
 
 /* MEDIA QUERY 1*/
