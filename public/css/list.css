@@ -35,3 +35,52 @@ h2{
 .usuarios p{
     margin-right: 5px;
 }
+
+.usuarios a{
+    text-decoration: none;
+    color: black;
+}
+
+form button{
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+form #save:hover{
+    background-color: #0022AA;
+    color: white;
+}
+
+form #edit:hover{
+    background-color: #0022AA;
+    color: white;
+}
+
+form #delete:hover{
+    background-color: red;
+    color: white;
+}
+
+form .control{
+    padding: 8px 8px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.form-edit label{
+    font-weight: bolder;
+    text-align: left;
+}
+
+.divs-edit {
+    text-align: left;
+}
+
+.divs-detail{
+    font-size: 20px;
+}
+
+.divs-detail label{
+    font-weight: bolder;
+}

@@ -3,29 +3,31 @@ const fs = require ('fs');
 const data = require('../utils/dataAccessModel');
 
 
-const readJSON = (archivo)=>{
-    let productos = JSON.parse(fs.readFileSync(`./src/data/${archivo}`, {encoding: 'utf-8'}));
-    return productos
-};
+let productos = data.readJSON('productos.json');
 
-const writeJSON = (archivo, variable)=>{
-    fs.writeFileSync(`./src/data/${archivo}`, JSON.stringify(variable));
-}
+// const readJSON = (archivo)=>{
+//     let productos = JSON.parse(fs.readFileSync(`./src/data/${archivo}`, {encoding: 'utf-8'}));
+//     return productos
+// };
 
-let productos = readJSON('productos.json');
+// const writeJSON = (archivo, variable)=>{
+//     fs.writeFileSync(`./src/data/${archivo}`, JSON.stringify(variable));
+// }
+
+// let productos = readJSON('productos.json');
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 let mainController = {
     list: (req,res) => {
-        let productos = readJSON('productos.json');
+        let productos = data.readJSON('productos.json');
         let productosUltimasVisitas = productos.filter((producto)=>{return producto.category == "visited"});
         let productosOfertas = productos.filter((producto)=>{return producto.category == "in-sale"});
         res.render('home.ejs', {productosUltimasVisitas,productosOfertas,toThousand});
     },
     detail: (req,res) => {
-        let productos = readJSON('productos.json');
+        let productos = data.readJSON('productos.json');
         let idURL = req.params.id;
         let productoSeleccionado = productos.filter((producto)=>{return producto.id == idURL})
         res.render('detailProducts',{productoSeleccionado,toThousand});
@@ -33,7 +35,7 @@ let mainController = {
     delete: (req,res)=>{
         let idURL = req.params.id;
         let productosActualizados = productos.filter ((producto)=>{return producto.id != idURL});
-        writeJSON('productos.json', productosActualizados);
+        data.writeJSON('productos.json', productosActualizados);
         res.redirect('/');
     },
     edit: (req,res) => {
@@ -55,30 +57,25 @@ let mainController = {
             image: productoSeleccionado[0].image,
         };
         productosActualizados.push(productoActualizado);
-        writeJSON('productos.json', productosActualizados);
+        data.writeJSON('productos.json', productosActualizados);
         res.redirect('/products/detail/' + idURL);
     },
     create:(req,res) => {
         res.render('product-create-form');
     },
     storage:(req,res) => {
-        let ultimaID = productos.length;
         if (req.file){
             let productoNuevo = {
-                id: ultimaID +1,
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                discount: req.body.discount,
+                id: data.lastID('productos.json'),
+                ...req.body,
                 image: req.file.filename,
-                category: req.body.category,
             };
             if (productos === ""){
                 productos = [];
             } else {
                 productos.push(productoNuevo)
             };
-            writeJSON('productos.json', productos);
+            data.writeJSON('productos.json', productos);
             res.redirect('/');
         } else {
             res.render('product-create-form');

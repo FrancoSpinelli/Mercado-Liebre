@@ -16,15 +16,15 @@
     <main class="main">
         <h2>Usuarios registrados</h2>
         <section class="section">
-                <% for (let i = 0 ; i < usuariosRegistrados.length; i++) { %>
+                <% for (let i = 0 ; i < users.length; i++) { %>
                     <article class="usuarios">
-                        <% if (usuariosRegistrados[i].fotoPerfil == "") {%>
-                            <a href="/users/detail/<%= usuariosRegistrados[i].userName %>"><img id="fotoPerfil" src="/img/imgUsuarios/default.jpg" alt="Foto del usuario"></a>
+                        <% if (users[i].fotoPerfil == "") {%>
+                            <a href="/users/detail/<%= users[i].userName %>"><img id="fotoPerfil" src="/img/imgUsuarios/default.jpg" alt="Foto del usuario"></a>
                         <% } else {%> 
-                            <a href="/users/detail/<%= usuariosRegistrados[i].userName %>"> <img id="fotoPerfil" src="/img/imgUsuarios/<%=usuariosRegistrados[i].fotoPerfil%>" alt="Foto de usuario"></a>
+                            <a href="/users/detail/<%= users[i].userName %>"> <img id="fotoPerfil" src="/img/imgUsuarios/<%=users[i].fotoPerfil%>" alt="Foto de usuario"></a>
                         <% } %> 
-                        <p> <strong><%=usuariosRegistrados[i].userName%>:</strong></p>
-                        <%= usuariosRegistrados[i].name %>, <%= usuariosRegistrados[i].email %>
+                        <p> <strong><a href="/users/detail/<%= users[i].userName %>"><%=users[i].userName%>:</a></strong></p>
+                        <%= users[i].name %>, <%= users[i].email %>
                         <br>
                     </article>   
                 <% } %>  

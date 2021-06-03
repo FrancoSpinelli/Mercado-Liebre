@@ -19,11 +19,11 @@
         <img class="banner" src="/img/img-home-banner.jpg" alt="Banner">
 
         
-        <form class="form-register" action="/users/register/" method="post" enctype="multipart/form-data">
+        <form class="form-register" action="/users/register" method="post" enctype="multipart/form-data">
             <h2 class="main-title">Completá tus datos</h2>
             <div class="divs-register">
                 <label for="">Nombre y apellido</label>
-                <input value="<%= locals.old && old.name ? old.name : '' %>" type="text" name="name" id="" class="control" placeholder="Juan Fernandez">
+                <input value="<%= locals.old && old.name ? old.name : 'Franco Spinelli' %>" type="text" name="name" id="" class="control" placeholder="Juan Fernandez">
                 <% if (locals.errors && errors.name) { %>
                     <p class="errors"><%= errors.name.msg %> </p>
                 <% } %>
@@ -66,7 +66,7 @@
 
                 <% let venderComprar = ['Vender', 'Comprar']; %>
                 <% for (categoria of venderComprar) {%>
-                    <input type="radio" name="venderComprar" value= "<%= categoria %>" id="vender" checked> 
+                    <input type="radio" name="venderComprar" value= "<%= categoria %>" id="<%= categoria %>" checked> 
                     <label for="<%= categoria %>"><%= categoria %></label>
                 <% } %> 
             </div>
@@ -77,7 +77,7 @@
 
                 <% for ( categoria of categorias) {%> 
                 <div class="divs-categorías">
-                    <input type="checkbox" name="<%= categoria %> " id="<%= categoria %>">
+                    <input type="checkbox" name="<%= categoria %>" id="<%= categoria %>">
                     <label for="<%= categoria %>"><%= categoria %></label>
                 </div>
                 <% } %> 

@@ -14,39 +14,40 @@
     <%- include('./partials/header.ejs') %>
 
     <main class="main">
-        <h2>HOLA <%= usuarioSeleccionado[0].userName %>! </h2>
+        <h2>Hola <%= userFound.userName %>! </h2>
         <br>
 
         <section class="section">
-            
-            <h3>Información de la cuenta</h3>
-            <br>
 
-            <form action="/users/edit/<%= usuarioSeleccionado[0].userName %>" method="GET">
+            <form action="/users/edit/<%= userFound.userName %>" method="GET">
 
-            <div class="divs-register">
-                <label for="">Nombre y apellido:</label>
-                <%= usuarioSeleccionado[0].name %>
-            </div>
-            <br>
-            <div class="divs-register">
-                <label for="">Correo electrónico:</label>
-                <%= usuarioSeleccionado[0].email %>
-            </div>
-            <br>
-            <div class="divs-register">
-                <label for="">Fecha de nacimiento:</label>
-                <%= usuarioSeleccionado[0].birthday %>
-            </div>
-            <br>
-            <div class="divs-register">
-                <label for="">Domicilio:</label>
-                <%= usuarioSeleccionado[0].adress %>
-            </div>
+                <div class="divs-detail">
+                    <label for="">Nombre y apellido:</label>
+                    <%= userFound.name %>
+                </div>
+                <br>
+                <div class="divs-detail">
+                    <label for="">Correo electrónico:</label>
+                    <%= userFound.email %>
+                </div>
+                <br>
+                <div class="divs-detail">
+                    <label for="">Fecha de nacimiento:</label>
+                    <%= userFound.birthday %>
+                </div>
+                <br>
+                <div class="divs-detail">
+                    <label for="">Domicilio:</label>
+                    <%= userFound.adress %>
+                </div>
 
-            <br><br>
-            <button type="submit">Editar</button>
+                <br>
+            <button  id="edit" type="submit">Editar</button>
 
+        </form>
+
+        <form action="/users/delete/<%= userFound.userName %>?_method=DELETE" method="post">
+            <button id="delete" type="submit">Eliminar cuenta</button>
         </form>
                 
         </section>

@@ -16,7 +16,7 @@
     
     <main class="main-login">
         <img class="banner" src="/img/img-home-banner.jpg" alt="Banner">
-        <form class="form-login" action="login">
+        <form class="form-login" action="/users/login" method="POST">
             <h2 class="main-title">Ingresá con tu usuario</h2>
             <div class="divs-login">
                 <label for="">Nombre de usuario</label>
@@ -30,8 +30,8 @@
             </div>
             <div class="div-remember-user">
                 <div>
-                    <input type="checkbox" name="remember-user" id="">
-                    <label for="">Recordar usuario</label>
+                    <input type="checkbox" name="remember-user" id="remember-user">
+                    <label for="remember-user">Recordar usuario</label>
                 </div>
                 <a href="#">Recuperar contraseña</a>
             </div>

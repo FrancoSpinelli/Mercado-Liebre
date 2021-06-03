@@ -32,7 +32,9 @@ app.use(express.static(publicPath));
 
 // Configuración de Session
 
-app.use(session( {secret: "Nuestro mensaje secreto"}));
+app.use(session( 
+    {secret: "Nuestro mensaje secreto", resave: false, saveUninitialized: false })
+);
 
 // Rutas hacia los módulos 
 

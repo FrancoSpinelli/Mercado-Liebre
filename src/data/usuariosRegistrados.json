@@ -1,1 +1,67 @@
-[{"name":"Franco Spinelli","userName":"Francocabj32","email":"franco_spinelli@hotmail.com","birthday":"2021-05-28","adress":"Av. Cordoba","fotoPerfil":"user1621725922483.jpeg","venderComprar":"vender","electro":"on","hogar":"on","pass":"asd","passRepeat":"asd","newletter":"on","terminosCondiciones":"on"},{"name":"Andrea Belén Ralde Flores","userName":"Belu0102","email":"belu.ralde@hotmail.com","birthday":"2001-02-01","adress":"MAAAZA 1234","fotoPerfil":"user1621736000825.jpeg","venderComprar":"comprar","hogar":"on","pass":"Pelita1234cuack","passRepeat":"Pelita1234cuack","terminosCondiciones":"on"},{"name":"Franco Spinelli","userName":"FranSpi2909","email":"francospinelli2903@gmail.com","birthday":"1997-05-11","adress":"Carranza 1500","fotoPerfil":"user1621737267868.jpeg","venderComprar":"vender","pass":"VivaPerón","passRepeat":"VivaPer+on","newletter":"on","terminosCondiciones":"on"}]
+[
+    {
+        "id": 1,
+        "name": "Andrea Belén Ralde Flores",
+        "userName": "Belu0102",
+        "email": "belu.ralde@hotmail.com",
+        "birthday": "2001-02-01",
+        "adress": "MAAAZA 1234",
+        "fotoPerfil": "user1621736000825.jpeg",
+        "venderComprar": "comprar",
+        "hogar": "on",
+        "pass": "Pelita1234cuack",
+        "passRepeat": "Pelita1234cuack",
+        "terminosCondiciones": "on"
+    },
+    {
+        "id": 2,
+        "name": "Franco Spinelli",
+        "userName": "Francocabj32",
+        "email": "franco_spinelli@hotmail.com",
+        "birthday": "1998-03-29",
+        "adress": "Av. Cordoba 1234",
+        "venderComprar": "Vender",
+        "Hogar": "on",
+        "Vida sana": "on",
+        "pass": "$2a$10$xIrfozRFYEZX/EPdA81OSOCfTfvD/HnkZJxsBCL2xeTyMjaaDO8EC",
+        "passRepeat": "Falopa1234",
+        "newletter": "on",
+        "terminosCondiciones": "on",
+        "fotoPerfil": "user1622505352222.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "Zoe Cardanas",
+        "userName": "ZoeC",
+        "email": "zoe.car@gmail.com",
+        "birthday": "1998-09-15",
+        "adress": "Carranza 1500",
+        "venderComprar": "Comprar",
+        "Electro": "on",
+        "Moda": "on",
+        "Hogar": "on",
+        "Juguetería": "on",
+        "Vida sana": "on",
+        "pass": "$2a$10$ryMbpDudkOko.QjOJlRkgO6YJ6xorT0BkQ.oTl/ZNt0bCFdbNPPTG",
+        "passRepeat": "ZoeC",
+        "newletter": "on",
+        "terminosCondiciones": "on",
+        "fotoPerfil": "user1622510068656.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Franco Spinelli",
+        "userName": "Francocabj32",
+        "email": "franco_spinelli@hotmail.com",
+        "birthday": "2001-05-02",
+        "adress": "Av. Cordoba 1234",
+        "venderComprar": "Comprar",
+        "Hogar": "on",
+        "Juguetería": "on",
+        "Vida sana": "on",
+        "pass": "$2a$10$MhBKmD69OCH2uC/i.o5hIuU6elOPOWdy4Y6saUZfExCFuuSQGI/0.",
+        "passRepeat": "$2a$10$niRaUf2hWTnFNERVuEhg/OMDLNT0w5P3e5VNIER6ruhymotcess.6",
+        "terminosCondiciones": "on",
+        "fotoPerfil": "user1622589942476.jpeg"
+    }
+]
