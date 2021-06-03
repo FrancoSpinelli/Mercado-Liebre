@@ -13,9 +13,10 @@
 <body>
     <%- include('./partials/header.ejs') %>
 
-    <main class="main">
+    <main class="main-detail">
         <h2>Hola <%= userFound.userName %>! </h2>
-        <br>
+        
+        <img src="/img/imgUsuarios/<%= userFound.fotoPerfil%>" alt="">
 
         <section class="section">
 
@@ -42,14 +43,16 @@
                 </div>
 
                 <br>
-            <button  id="edit" type="submit">Editar</button>
-
+                <% if (userLogged && userLogged.userName === userFound.userName) {%> 
+                    <button  id="edit" type="submit">Editar</button>
+                <% } %> 
         </form>
 
-        <form action="/users/delete/<%= userFound.userName %>?_method=DELETE" method="post">
-            <button id="delete" type="submit">Eliminar cuenta</button>
-        </form>
-                
+        <% if (userLogged && userLogged.userName === userFound.userName) {%> 
+            <form action="/users/delete/<%= userFound.userName %>?_method=DELETE" method="post">
+                <button id="delete" type="submit">Eliminar cuenta</button>
+            </form>
+        <% } %> 
         </section>
 
     </main>

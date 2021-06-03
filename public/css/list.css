@@ -84,3 +84,13 @@ form .control{
 .divs-detail label{
     font-weight: bolder;
 }
+
+.main-detail img, .main-edit img{
+    max-width: 200px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.main-edit img:hover{
+    opacity: 0.5;
+}

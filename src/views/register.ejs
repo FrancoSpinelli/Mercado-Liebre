@@ -23,7 +23,7 @@
             <h2 class="main-title">Completá tus datos</h2>
             <div class="divs-register">
                 <label for="">Nombre y apellido</label>
-                <input value="<%= locals.old && old.name ? old.name : 'Franco Spinelli' %>" type="text" name="name" id="" class="control" placeholder="Juan Fernandez">
+                <input value="<%= locals.old && old.name ? old.name : '' %>" type="text" name="name" id="" class="control" placeholder="Juan Fernandez">
                 <% if (locals.errors && errors.name) { %>
                     <p class="errors"><%= errors.name.msg %> </p>
                 <% } %>
@@ -87,17 +87,17 @@
                 <div class="pass">
                     <input type="password" name="pass" id="" class="control">
                     <i class="fas fa-eye-slash"></i>
-                    <!-- <% if (locals.errors && errors.pass) { %>
+                    <% if (locals.errors && errors.pass) { %>
                         <p class="errors"><%= errors.pass.msg %> </p>
-                    <% } %> -->
+                    <% } %>
                 </div>
                 <label required for="">Confirmar contraseña</label>
                 <div class="pass">
                     <input type="password" name="passRepeat" id="" class="control">
                     <i class="fas fa-eye-slash"></i>
-                    <!-- <% if (locals.errors && errors.pass) { %>
+                    <% if (locals.errors && errors.pass) { %>
                         <p class="errors"><%= errors.pass.msg %> </p>
-                    <% } %> -->
+                    <% } %>
                 </div>
                 
             </div>

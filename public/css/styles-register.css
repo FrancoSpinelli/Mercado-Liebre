@@ -83,9 +83,10 @@
 }
 
 .main-register .form-register .divs-register .pass{
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
-    width: auto;
+    width: 100%;
     position: relative;
 }
 
