@@ -16,31 +16,41 @@ let usersController = {
 
     processRegister: (req, res) => {
         let errorsValidations = validationResult(req);
-        if (errorsValidations.length > 0) {
-            return res.render('register', {errors: errorsValidations.mapped(), old: req.body})
+        if (errorsValidations.errors.length > 0) {
+            return res.render('register', {errors: errorsValidations.mapped(), old: req.body});
         } else {
-            let UserNameCheck = User.findUserName(req.body.userName);
-            if (UserNameCheck) {
+            let userNameCheck = User.findUserName(req.body.userName);
+            if (userNameCheck){
                 return res.render('register', { 
                     old: req.body,
                     errors: {
                         userName: {
-                            msg: 'El nombre de usuario no se encuentra disponible'
+                            msg: 'El nombre de usuario no está disponible'
                         }
                     }
                 });
-            } else{
-                let data = req.body;
-                let newUser = {
-                    id: User.generateID(),
-                    ...data,
-                    pass: bscryptjs.hashSync(data.pass, 10),
-                    fotoPerfil: req.file.filename,
-                };
-                User.create(newUser);
-                return res.redirect ('/users/list');
-            }
-        }  
+            };
+            if (req.body.pass !== req.body.passRepeat){
+                return res.render('register', { 
+                    old: req.body,
+                    errors: {
+                        pass: {
+                            msg: 'Las contraseñas no coinciden'
+                        }
+                    }
+                });
+            };
+            let data = req.body;
+            let newUser = {
+                id: User.generateID(),
+                ...data,
+                pass: bscryptjs.hashSync(data.pass, 10),
+                passRepeat: bscryptjs.hashSync(data.pass, 10),
+                fotoPerfil: req.file.filename,
+            };
+            User.create(newUser);
+            return res.redirect ('/users/list');
+        } 
     },
 
     login: (req,res) => {

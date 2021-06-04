@@ -51,12 +51,12 @@
             </div>
             <div class="divs-register">
                 <label for="">Domicilio</label>
-                <input type="text" name="adress" id="" class="control" placeholder="Calle Falsa 1234">
+                <input value="<%= locals.old && old.adress ? old.adress : '' %>" type="text" name="adress" id="" class="control" placeholder="Calle Falsa 1234">
             </div>
             <div class="divs-register">
                 
                 <label class="title-profile" for="">Foto de perfil</label>
-                <input type="file" name="fotoPerfil" id="">
+                <input required type="file" name="fotoPerfil" id="">
                 <% if (locals.errors && errors.fotoPerfil) {%> 
                     <p class="errors"><%= errors.fotoPerfil.msg %> </p>
                 <% } %>
