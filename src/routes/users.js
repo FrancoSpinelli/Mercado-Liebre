@@ -7,7 +7,6 @@ const validations = require ('../middlewares/validationsMiddlewares');
 const guestMiddleware = require ('../middlewares/guestMiddleware');
 const authMiddleware = require ('../middlewares/authMiddleware');
 
-
 let usersController = require ('../controllers/usersController');
 
 
@@ -22,6 +21,7 @@ router.post ('/register', fileUpload.single('fotoPerfil'), validations, usersCon
 router.get ('/login',guestMiddleware, usersController.login);
 router.post ('/login', usersController.processLogin);
 router.delete('/delete/:userName', usersController.delete);
+router.get('/logout', usersController.logout);
 
 
 

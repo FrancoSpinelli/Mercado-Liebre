@@ -20,18 +20,33 @@
             <li><a href="#">Ayuda</a></li>
         </ul>
         <ul class="login-bar">
-            <li>
-                <a href="/users/register">Creá tu cuenta <i class="far fa-id-card"></i></a>
-            </li>
-            <li>
-                <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-            </li>
-            <li>
-                <a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a>
-            </li>
-            <li>
-                <a href="/users/list">Usuarios registrados <i class="fas fa-users"></i></a>
-            </li>
+            <% if (!locals.userIsLogged) { %>
+                <li class="space">
+                    <a href="/users/register">Creá tu cuenta <i class="far fa-id-card"></i></a>
+                </li>
+                <li class="space">
+                    <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                </li>
+                <li class="space">
+                    <a  href="/users/list">Usuarios registrados <i class="fas fa-users"></i></a>
+                </li>
+            <% } else { %>
+                <li>
+                    <div class="userLogged">
+                        <a href="/users/detail/<%=locals.UserLogged.userName%>"><img id="photoUser" src="/img/imgUsuarios/<%=locals.UserLogged.fotoPerfil%>" alt="Foto de perfil"></a>
+                        <a id="userName" href="/users/detail/<%=locals.UserLogged.userName%>"><%=locals.UserLogged.userName%></a>
+                    </div>
+                </li>
+                <li>
+                    <a href="/users/list">Usuarios registrados <i class="fas fa-users"></i></a>
+                </li>
+                <li>
+                    <a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a>
+                </li>
+                <li>
+                    <a href="/users/logout">Log out <i class="fas fa-shopping-basket"></i></a>
+                </li>
+            <% } %>
         </ul>
     </nav>
     <div class="bars">

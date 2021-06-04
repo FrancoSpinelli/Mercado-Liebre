@@ -19,15 +19,27 @@ let usersController = {
         if (errorsValidations.length > 0) {
             return res.render('register', {errors: errorsValidations.mapped(), old: req.body})
         } else {
-            let data = req.body;
-            let newUser = {
-                id: User.generateID(),
-                ...data,
-                pass: bscryptjs.hashSync(data.pass, 10),
-                fotoPerfil: req.file.filename,
-            };
-            User.create(newUser);
-            return res.redirect ('/users/list');
+            let UserNameCheck = User.findUserName(req.body.userName);
+            if (UserNameCheck) {
+                return res.render('register', { 
+                    old: req.body,
+                    errors: {
+                        userName: {
+                            msg: 'El nombre de usuario no se encuentra disponible'
+                        }
+                    }
+                });
+            } else{
+                let data = req.body;
+                let newUser = {
+                    id: User.generateID(),
+                    ...data,
+                    pass: bscryptjs.hashSync(data.pass, 10),
+                    fotoPerfil: req.file.filename,
+                };
+                User.create(newUser);
+                return res.redirect ('/users/list');
+            }
         }  
     },
 
@@ -62,6 +74,9 @@ let usersController = {
         delete userFound.pass;
         delete userFound.passRepeat;
         req.session.userInSession = userFound;
+        if (req.body.remember_user) {
+            res.cookie('userNameLogged', req.body.userName, { maxAge: (1000 * 60 * 30)});
+        }
         return res.redirect(`detail/${userFound.userName}`);
     },
 
@@ -94,6 +109,12 @@ let usersController = {
         let userNameURL = req.params.userName;
         User.delete(userNameURL);
         return res.redirect('/users/list');
+    },
+    
+    logout: (req, res) =>{
+        res.clearCookie('userNameLogged')
+        req.session.destroy();
+        res.redirect('/');
     }
 }
 

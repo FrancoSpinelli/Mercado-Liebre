@@ -4,6 +4,8 @@ const path = require ('path');
 const methodOverride = require ('method-override');
 const expressValidator = require ('express-validator');
 const session = require('express-session');
+const userLoggedMidleware = require ('./src/middlewares/userLoggedMiddleware');
+const cookies = require('cookie-parser');
 
 
 // Configuración de EJS
@@ -35,6 +37,10 @@ app.use(express.static(publicPath));
 app.use(session( 
     {secret: "Nuestro mensaje secreto", resave: false, saveUninitialized: false })
 );
+
+app.use(cookies());
+
+app.use(userLoggedMidleware);
 
 // Rutas hacia los módulos 
 

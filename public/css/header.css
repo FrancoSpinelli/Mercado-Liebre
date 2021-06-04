@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    margin: 0;  
+    margin: 0;
     padding: 0;
 }
 
@@ -72,6 +72,13 @@
     list-style-type: none;
     margin: 0;
     padding: 7px 0;
+}
+
+.header .bot-nav .userLogged{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    font-weight: bolder;
 }
 
 .header a{
@@ -159,13 +166,14 @@
         display: flex;
         justify-content: space-around;
         margin: auto;
-        width: 95%;
+        width: 98%;
     }
 
     .header .bot-nav .nav-bar, .header .bot-nav .login-bar{
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-around;
+        align-items: center;
         width: 100%;
         margin: auto;
         font-size: 60%;
@@ -190,6 +198,12 @@
     .header .bars{
         display: none;
     }
+
+    #photoUser{
+        max-width: 30px;
+        border-radius: 8%;
+        margin-right: 5px ;
+    }
 }
 
 
@@ -197,7 +211,7 @@
 
 @media (min-width: 769px){
 
-    
+
 
     .header .top-nav .searcher .control{
         width: 100%;
@@ -207,7 +221,7 @@
     .header .top-nav .searcher i{
         width: 2%;
     }
- 
+
     .header .top-nav .cuotas{
         font-size: 180%;
         width: 25%;
@@ -217,8 +231,8 @@
         justify-content: center;
     }
 
-    .header .bot-nav{
-        padding: 10px 0 5px 0;
+    .header .bot-nav .space{
+        padding: 10px 0 10px 0;
     }
 
     .header .bot-nav ul li{
