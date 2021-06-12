@@ -11,7 +11,7 @@ const cookies = require('cookie-parser');
 // Configuración de EJS
 
 app.set ('view engine', 'ejs');
-app.set('views', path.join(__dirname, './src/views'))
+app.set('views', path.join(__dirname, './src/views'));
 
 
 // Configuración de METODOS 
@@ -23,7 +23,7 @@ app.use(methodOverride('_method'));
 // Configuración puerto en Heroku
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log('Servidor corriendo en el puerto 3000')
+    console.log('Servidor corriendo en el puerto 3000');
 });
 
 

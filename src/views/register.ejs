@@ -56,7 +56,7 @@
             <div class="divs-register">
                 
                 <label class="title-profile" for="">Foto de perfil</label>
-                <input required type="file" name="fotoPerfil" id="">
+                <input  type="file" name="fotoPerfil" id="">
                 <% if (locals.errors && errors.fotoPerfil) {%> 
                     <p class="errors"><%= errors.fotoPerfil.msg %> </p>
                 <% } %>
@@ -73,11 +73,16 @@
             <div class="categorias">
                 <label class="title" id="" for="">Categorías de interés:</label>
 
-                <% let categorias = ['Electro', 'Moda', 'Hogar', 'Juguetería', 'Vida sana'] %> 
+                <!-- <div class="divs-categorías">
+                    <input checked type="checkbox" name="Deportes" id="Deportes">
+                    <label for="Deportes">Deportes</label>
+                </div> -->
 
+                <% let categorias = ['Electro', 'Moda', 'Hogar', 'Juguetería', 'Vida sana'] %> 
+                
                 <% for ( categoria of categorias) {%> 
                 <div class="divs-categorías">
-                    <input type="checkbox" name="<%= categoria %>" id="<%= categoria %>">
+                    <input <%= locals.old && old[categoria] ? "checked" : null%> type="checkbox" name="<%= categoria %>" id="<%= categoria %>">
                     <label for="<%= categoria %>"><%= categoria %></label>
                 </div>
                 <% } %> 
@@ -103,11 +108,11 @@
             </div>
             <div class="div-accept">
                 <div class="newlletter">
-                    <input type="checkbox" name="newletter" id="newletter">
+                    <input <%= locals.old && old.newletter ? "checked" : null%> type="checkbox" name="newletter" id="newletter">
                     <label for="newletter">Deseo recibir información sobre los nuevos productos.</label>
                 </div>
                 <div class="terminos-condiciones">
-                    <input type="checkbox" name="terminosCondiciones" id="terminos-condiciones">
+                    <input <%= locals.old && old.terminosCondiciones ? "checked" : null%> type="checkbox" name="terminosCondiciones" id="terminos-condiciones">
                     <label required for="terminos-condiciones">He leído y acepto los <a href="#">Términos y Condiciones</a>.</label>
                 </div>
             </div>

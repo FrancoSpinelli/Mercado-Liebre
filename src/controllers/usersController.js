@@ -1,6 +1,5 @@
 const {validationResult} = require('express-validator');
 const bscryptjs = require ('bcryptjs');
-const data = require('../utils/dataAccessModel');
 const User = require('../models/User');
 
 
@@ -40,13 +39,17 @@ let usersController = {
                     }
                 });
             };
+            let image = 'default.jpg';
+            if (req.file) {
+                return image = req.file.filename;
+            }
             let data = req.body;
             let newUser = {
                 id: User.generateID(),
                 ...data,
                 pass: bscryptjs.hashSync(data.pass, 10),
                 passRepeat: bscryptjs.hashSync(data.pass, 10),
-                fotoPerfil: req.file.filename,
+                fotoPerfil: image,
             };
             User.create(newUser);
             return res.redirect ('/users/list');
@@ -106,10 +109,16 @@ let usersController = {
     processEdit: (req,res)=>{
         let userNameURL = req.params.userName;
         let userToEdit = User.findUserName(userNameURL)
+        let image = null;
+        if (req.file) {
+            image = req.file.filename
+        } else {
+            image = userToEdit.fotoPerfil;
+        }
         let userUpdate = {
             ...userToEdit,
             ...req.body,
-            fotoPerfil: req.file.filename
+            fotoPerfil: image
         };
         User.edit(userNameURL, userUpdate);
         return res.render (`detail`, {userFound:userUpdate, userLogged: req.session.userInSession });
