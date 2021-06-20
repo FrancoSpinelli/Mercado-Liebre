@@ -1,7 +1,6 @@
 const path = require ('path');
 const fs = require ('fs');
 const Products = require('../models/Products');
-const db = require('../../database/models/index.js');
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -10,20 +9,20 @@ let productController = {
     
     list: (req,res) => {
         
-        let visitedPromise = db.Producto.findAll({
-            where: {
-                category: 'visited'
-            }
-        }).then(productosUltimasVisitas=> productosUltimasVisitas);
+        // let visitedPromise = db.Producto.findAll({
+        //     where: {
+        //         category: 'visited'
+        //     }
+        // }).then(productosUltimasVisitas=> productosUltimasVisitas);
 
-        let inSalePromise = db.Producto.findAll({
-            where:{
-                category: 'in-sale'
-            }
-        }).then(productosOfertas=> productosOfertas);
+        // let inSalePromise = db.Producto.findAll({
+        //     where:{
+        //         category: 'in-sale'
+        //     }
+        // }).then(productosOfertas=> productosOfertas);
         
-        Promise.all([visitedPromise, inSalePromise])
-            .then(resultado=>console.log(resultado))
+        // Promise.all([visitedPromise, inSalePromise])
+        //     .then(resultado=>console.log(resultado))
 
 
 
