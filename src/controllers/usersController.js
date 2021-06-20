@@ -15,6 +15,7 @@ let usersController = {
 
     processRegister: (req, res) => {
         let errorsValidations = validationResult(req);
+        return res.render(req.file);
         if (errorsValidations.errors.length > 0) {
             return res.render('register', {errors: errorsValidations.mapped(), old: req.body});
         } else {
@@ -50,7 +51,7 @@ let usersController = {
                 pass: bscryptjs.hashSync(data.pass, 10),
                 passRepeat: bscryptjs.hashSync(data.pass, 10),
                 fotoPerfil: image,
-            };
+            };        
             User.create(newUser);
             return res.redirect ('/users/list');
         } 

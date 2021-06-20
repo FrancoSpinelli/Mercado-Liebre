@@ -1,7 +1,6 @@
 const path = require ('path');
 const fs = require ('fs')
 const Products = require('../models/Products');
-const db = require('../../../RalWood/database/models/index.js.js');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -12,8 +11,6 @@ let mainController = {
         let productosOfertas = products.filter((product)=>{return product.category == "in-sale"});
         res.render('home.ejs', {productosUltimasVisitas,productosOfertas,toThousand});
     },
- 
-    
 }
 
 module.exports = mainController;
