@@ -31,6 +31,7 @@ let mainController = {
         // let productosOfertas = products.filter((product)=>{return product.category == "in-sale"});
         // res.render('home.ejs', {productosUltimasVisitas,productosOfertas,toThousand});
     },
+    
 
     
 }
