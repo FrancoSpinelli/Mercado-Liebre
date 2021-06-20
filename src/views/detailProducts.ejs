@@ -26,34 +26,34 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Detalle del producto: <%= productSelected[0].name %> </h2>
+				<h2 class="products-title">Detalle del producto: <%= productSelected.name %> </h2>
 			</div>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<div class="col-12 col-lg-8">
-					<img src="/img/imgArticulos/<%= productSelected[0].image%>" alt="product image" class="product-detail-img">
+					<img src="/img/imgArticulos/<%= productSelected.image%>" alt="product image" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= productSelected[0].description %>
+						<%= productSelected.description %>
 					</p>
 				</div>
 				<div class="col-12 col-lg-4">
 					<article class="product-detail-info">
-						<h3 class="product-detail-title"><%= productSelected[0].name %></h3>
+						<h3 class="product-detail-title"><%= productSelected.name %></h3>
 
-						<% if (productSelected[0].discount != 0) {%> 
+						<% if (productSelected.discount != 0) {%> 
 							<p class="product-detail-price small">
-								<span>$<%= toThousand(productSelected[0].price )%></span>
+								<span>$<%= toThousand(productSelected.price )%></span>
 								/
-								<b><%= productSelected[0].discount %>% OFF</b>
+								<b><%= productSelected.discount %>% OFF</b>
 							</p>
 							<p class="product-detail-price">
-								$<%= toThousand((productSelected[0].price * (1-(productSelected[0].discount/100)))) %> 
+								$<%= toThousand((productSelected.price * (1-(productSelected.discount/100)))) %> 
 							</p>
 							<% } else {%> 
 							
 							<p class="product-detail-price">
-								$ <%= toThousand(productSelected[0].price) %>
+								$ <%= toThousand(productSelected.price) %>
 							</p>
 							<% } %> 
 
@@ -71,8 +71,8 @@
 						<!-- <a href="#" class="buy-now-button">COMPRAR AHORA</a>
 						<hr> -->
 
-						<a href="/products/edit/<%= productSelected[0].id %>" class="action-button edit">EDITAR PRODUCTO</a>
-						<form action="<%= productSelected[0].id %>?_method=DELETE" method="POST" style="display: inline-flex">
+						<a href="/products/edit/<%= productSelected.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="<%= productSelected.id %>?_method=DELETE" method="POST" style="display: inline-flex">
 							<button type="submit" class="action-button delete">ELIMINAR</button>
 						</form>
 					</article>

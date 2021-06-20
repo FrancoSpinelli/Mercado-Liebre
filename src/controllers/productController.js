@@ -1,23 +1,49 @@
 const path = require ('path');
 const fs = require ('fs');
 const Products = require('../models/Products');
+const db = require('../../database/models/index.js');
+
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 let productController = {
     
     list: (req,res) => {
-        let products = Products.readDataBase()
-        let productosUltimasVisitas = products.filter((product)=>{return product.category == "visited"});
-        let productosOfertas = products.filter((product)=>{return product.category == "in-sale"});
-        res.render('home.ejs', {productosUltimasVisitas,productosOfertas,toThousand});
+        
+        let visitedPromise = db.Producto.findAll({
+            where: {
+                category: 'visited'
+            }
+        }).then(productosUltimasVisitas=> productosUltimasVisitas);
+
+        let inSalePromise = db.Producto.findAll({
+            where:{
+                category: 'in-sale'
+            }
+        }).then(productosOfertas=> productosOfertas);
+        
+        Promise.all([visitedPromise, inSalePromise])
+            .then(resultado=>console.log(resultado))
+
+
+
+
+
+
+
+
+        // let products = Products.readDataBase()
+        // let productosUltimasVisitas = products.filter((product)=>{return product.category == "visited"});
+        // let productosOfertas = products.filter((product)=>{return product.category == "in-sale"});
+        // res.render('home.ejs', {productosUltimasVisitas,productosOfertas,toThousand});
     },
     
     detail: (req,res) => {
-        let products = Products.readDataBase()
-        let idURL = req.params.id;
-        let productSelected = products.filter((product)=>{return product.id == idURL})
-        res.render('detailProducts',{productSelected,toThousand});
+        // let products = Products.readDataBase()
+        // let idURL = req.params.id;
+        // let productSelected = products.filter((product)=>{return product.id == idURL})
+        db.Producto.findByPk(req.params.id)
+        .then(productSelected=> res.render('detailProducts',{productSelected,toThousand}));
     },
 
     delete: (req,res)=>{
