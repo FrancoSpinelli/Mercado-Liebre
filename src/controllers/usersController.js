@@ -14,8 +14,8 @@ let usersController = {
     },
 
     processRegister: (req, res) => {
+        return res.render(req.body);
         let errorsValidations = validationResult(req);
-        return res.render(req.file);
         if (errorsValidations.errors.length > 0) {
             return res.render('register', {errors: errorsValidations.mapped(), old: req.body});
         } else {
@@ -140,7 +140,3 @@ let usersController = {
 
 
 module.exports = usersController;
-
-
-
-
