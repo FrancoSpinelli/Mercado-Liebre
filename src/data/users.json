@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Andrea Flores",
+        "userName": "Belu0102",
+        "email": "belu.ralde@hotmail.com.ar",
+        "birthday": "2001-02-01",
+        "adress": "MAZA 1234",
+        "fotoPerfil": "user1621736000825.jpeg",
+        "venderComprar": "comprar",
+        "hogar": "on",
+        "pass": "Pelita1234cuack",
+        "passRepeat": "Pelita1234cuack",
+        "terminosCondiciones": "on"
+    },
+    {
+        "id": 3,
+        "name": "Zoe Cardanas",
+        "userName": "ZoeC",
+        "email": "zoe.car@gmail.com.ar",
+        "birthday": "1998-09-15",
+        "adress": "Carranza 1500",
+        "venderComprar": "Comprar",
+        "Electro": "on",
+        "Moda": "on",
+        "Hogar": "on",
+        "Juguetería": "on",
+        "Vida sana": "on",
+        "pass": "$2a$10$ryMbpDudkOko.QjOJlRkgO6YJ6xorT0BkQ.oTl/ZNt0bCFdbNPPTG",
+        "passRepeat": "ZoeC",
+        "newletter": "on",
+        "terminosCondiciones": "on",
+        "fotoPerfil": "user1622731821176.jpeg"
+    },
+    {
+        "id": 2,
+        "name": "Franco Andres Spinelli",
+        "userName": "FrancoSpinelli123",
+        "email": "francospinelli2903@gmail.com",
+        "birthday": "1998-03-29",
+        "adress": "Av. Cordoba 1234",
+        "venderComprar": "Comprar",
+        "Electro": "on",
+        "Juguetería": "on",
+        "pass": "$2a$10$HBjyWe35n6Dc9Msg7A.uvucGs8p1.vmbrUv7CyV3211h6uyz6q3.u",
+        "passRepeat": "asd",
+        "terminosCondiciones": "on",
+        "fotoPerfil": "user1622734476757.jpeg"
+    }
+]

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado-Liebre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main class="main-edit">
+        <h2>HOLA <%= userToEdit.userName %>! </h2>
+        <br>
+
+        <section class="section">
+
+            <form class = "form-edit" action="/users/edit/<%= userToEdit.userName %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+            <div class="divs-edit">
+                <label for="">Foto de perfil:</label>
+                <br>
+                <label for="fotoPerfilbtn"><img src="/img/imgUsuarios/<%= userToEdit.fotoPerfil %>"></img></label>
+                <br>
+                <input type="file" name="fotoPerfil" id="fotoPerfilbtn">
+            </div>
+                <br>
+            <div class="divs-edit">
+                <label for="">Nombre y apellido:</label>
+                <input class="control" type="text" name="name" value="<%= userToEdit.name %>">
+                
+            </div>
+            <br>
+            <div class="divs-edit">
+                <label for="">Correo electrónico:</label>
+                <input class="control" type="text" name="email" value="<%= userToEdit.email %>">
+                
+            </div>
+            <br>
+            <div class="divs-edit">
+                <label for="">Fecha de nacimiento:</label>
+                <input class="control" type="date" name="birthday" value="<%= userToEdit.birthday %>">
+                
+            </div>
+            <br>
+            <div class="divs-edit">
+                <label for="">Domicilio:</label>
+                <input class="control" type="text" name="adress" value="<%= userToEdit.adress %>">
+            </div>
+            
+
+            <br><br>
+            <button id="save" type="submit">GUARDAR</button>
+
+        </form>
+
+        <form action="/users/detail/<%= userToEdit.userName %>">
+            <button id="back" type="submit">ATRAS</button>
+        </form>
+                
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
