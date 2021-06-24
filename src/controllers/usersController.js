@@ -14,7 +14,6 @@ let usersController = {
     },
 
     processRegister: (req, res) => {
-        return res.render(req.body);
         let errorsValidations = validationResult(req);
         if (errorsValidations.errors.length > 0) {
             return res.render('register', {errors: errorsValidations.mapped(), old: req.body});
@@ -30,6 +29,7 @@ let usersController = {
                     }
                 });
             };
+            
             if (req.body.pass !== req.body.passRepeat){
                 return res.render('register', { 
                     old: req.body,
@@ -42,8 +42,10 @@ let usersController = {
             };
             let image = 'default.jpg';
             if (req.file) {
-                return image = req.file.filename;
-            }
+                image = req.file.filename;
+            } else {
+                image = 'default.jpg';
+            };
             let data = req.body;
             let newUser = {
                 id: User.generateID(),
@@ -69,9 +71,9 @@ let usersController = {
                 old: req.body.userName,
                 errors: {
                     userName: {
-                        msg: 'Verificar usuario y/o contraseña'
-                    }
-                }
+                        msg: 'Verificar usuario y/o contraseña',
+                    },
+                },
             });
         }; 
         let passChecked = bscryptjs.compareSync(req.body.pass, userFound.pass);
@@ -80,9 +82,9 @@ let usersController = {
                 old: req.body.userName,
                 errors: {
                     userName: {
-                        msg: 'Verificar usuario y/o contraseña'
-                    }
-                }
+                        msg: 'Verificar usuario y/o contraseña',
+                    },
+                },
             });
         };
         delete userFound.pass;
@@ -109,17 +111,17 @@ let usersController = {
 
     processEdit: (req,res)=>{
         let userNameURL = req.params.userName;
-        let userToEdit = User.findUserName(userNameURL)
+        let userToEdit = User.findUserName(userNameURL);
         let image = null;
         if (req.file) {
-            image = req.file.filename
+            image = req.file.filename;
         } else {
             image = userToEdit.fotoPerfil;
         }
         let userUpdate = {
             ...userToEdit,
             ...req.body,
-            fotoPerfil: image
+            fotoPerfil: image,
         };
         User.edit(userNameURL, userUpdate);
         return res.render (`detail`, {userFound:userUpdate, userLogged: req.session.userInSession });
@@ -137,6 +139,5 @@ let usersController = {
         res.redirect('/');
     }
 }
-
 
 module.exports = usersController;

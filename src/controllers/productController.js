@@ -15,37 +15,32 @@ let productController = {
     },
     
     detail: (req,res) => {
-        let products = Products.readDataBase()
+        let products = Products.readDataBase();
         let idURL = req.params.id;
-        let productSelected = products.filter((product)=>{return product.id == idURL})
-        db.Producto.findByPk(req.params.id)
-        .then(productSelected=> res.render('detailProducts',{productSelected,toThousand}));
+        let productSelected = Products.findByPk(idURL);
+        res.render('detailProducts.ejs', {productSelected,toThousand});
     },
 
     delete: (req,res)=>{
         let idURL = req.params.id;
         Products.delete(idURL);
-        res.redirect('/');
+        res.redirect('/products/list');
     },
 
     edit: (req,res) => {
         let idURL = req.params.id;
-        let productSelected = Products.findIDProduct(idURL);
+        let productSelected = Products.findByPk(idURL);
         res.render('product-edit-form', {productSelected});
     },
 
     update: (req,res) =>{
         let idURL = req.params.id;
-        productSelected = Products.findIDProduct(idURL);
+        productSelected = Products.findByPk(idURL);
         productUpdate = {
             id: idURL,
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            description: req.body.description,
-            category: req.body.category,
+            ...req.body,
             image: productSelected.image
-        }
+        };
         Products.edit(idURL, productUpdate);
         return res.redirect(`/products/detail/${idURL}`);
     },
