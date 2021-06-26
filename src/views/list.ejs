@@ -18,10 +18,10 @@
         <section class="section">
                 <% for (let i = 0 ; i < users.length; i++) { %>
                     <article class="usuarios">
-                        <% if (users[i].fotoPerfil == "") {%>
-                            <a href="/users/detail/<%= users[i].userName %>"><img id="fotoPerfil" src="/img/imgUsuarios/default.jpg" alt="Foto del usuario"></a>
+                        <% if (users[i].image == "") {%>
+                            <a href="/users/detail/<%= users[i].userName %>"><img id="image" src="/img/imgUsuarios/default.jpg" alt="Foto del usuario"></a>
                         <% } else {%> 
-                            <a href="/users/detail/<%= users[i].userName %>"> <img id="fotoPerfil" src="/img/imgUsuarios/<%=users[i].fotoPerfil%>" alt="Foto de usuario"></a>
+                            <a href="/users/detail/<%= users[i].userName %>"> <img id="image" src="/img/imgUsuarios/<%=users[i].image%>" alt="Foto de usuario"></a>
                         <% } %> 
                         <p> <strong><a href="/users/detail/<%= users[i].userName %>"><%=users[i].userName%>:</a></strong></p>
                         <%= users[i].name %>, <%= users[i].email %>

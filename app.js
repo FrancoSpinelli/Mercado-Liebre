@@ -4,7 +4,7 @@ const path = require ('path');
 const methodOverride = require ('method-override');
 const expressValidator = require ('express-validator');
 const session = require('express-session');
-const userLoggedMidleware = require ('./src/middlewares/userLoggedMiddleware');
+// const userLoggedMidleware = require ('./src/middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
 
 
@@ -40,7 +40,7 @@ app.use(session(
 
 app.use(cookies());
 
-app.use(userLoggedMidleware);
+// app.use(userLoggedMidleware);
 
 // Rutas hacia los módulos 
 
