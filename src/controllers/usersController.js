@@ -1,12 +1,14 @@
 const {validationResult} = require('express-validator');
 const bscryptjs = require ('bcryptjs');
+const db = require('../database/models');
+
 
 
 let usersController = {
-    list: (req,res) => {
-        let users = User.users();
-        res.render('list.ejs', {users})
-    },
+    // list: (req,res) => {
+    //     db.Users.findAll()
+    //         .then (users => res.render('list', {users}));
+    // },
 
 //     register: (req,res) => {
 //         res.render('register.ejs')

@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     let cols= {
         id: {
             type: DataTypes.INTEGER,
+            primaryKey: true,
         },
         name: {
             type: DataTypes.STRING,
@@ -21,6 +22,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         image: {
             type: DataTypes.STRING,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
         },
     };
     let config = {
