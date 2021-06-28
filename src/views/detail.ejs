@@ -14,42 +14,42 @@
     <%- include('./partials/header.ejs') %>
 
     <main class="main-detail">
-        <h2>Hola <%= userFound.userName %>! </h2>
+        <h2>Hola <%= userFound[0].userName %>! </h2>
         
-        <img src="/img/imgUsuarios/<%= userFound.image%>" alt="">
+        <img src="/img/imgUsuarios/<%= userFound[0].image%>" alt="">
 
         <section class="section">
 
-            <form action="/users/edit/<%= userFound.userName %>" method="GET">
+            <form action="/users/edit/<%= userFound[0].userName %>" method="GET">
 
                 <div class="divs-detail">
                     <label for="">Nombre y apellido:</label>
-                    <%= userFound.name %>
+                    <%= userFound[0].name %>
                 </div>
                 <br>
                 <div class="divs-detail">
                     <label for="">Correo electrónico:</label>
-                    <%= userFound.email %>
+                    <%= userFound[0].email %>
                 </div>
                 <br>
                 <div class="divs-detail">
                     <label for="">Fecha de nacimiento:</label>
-                    <%= userFound.birthday %>
+                    <%= userFound[0].birthday %>
                 </div>
                 <br>
                 <div class="divs-detail">
                     <label for="">Domicilio:</label>
-                    <%= userFound.address %>
+                    <%= userFound[0].address %>
                 </div>
 
                 <br>
-                <% if (userLogged && userLogged.userName === userFound.userName) {%> 
+                <% if (userLogged[0] && userLogged[0].userName === userFound[0].userName) {%> 
                     <button  id="edit" type="submit">Editar</button>
                 <% } %> 
         </form>
 
-        <% if (userLogged && userLogged.userName === userFound.userName) {%> 
-            <form action="/users/delete/<%= userFound.userName %>?_method=DELETE" method="post">
+        <% if (userLogged[0] && userLogged[0].userName === userFound[0].userName) {%> 
+            <form action="/users/delete/<%= userFound[0].userName %>?_method=DELETE" method="post">
                 <button id="delete" type="submit">Eliminar cuenta</button>
             </form>
         <% } %> 

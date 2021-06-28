@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         name: {
             type: DataTypes.STRING,
         },
-        username: {
+        userName: {
             type: DataTypes.STRING,
         },
         email: {
@@ -37,6 +37,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         vida_sana: {
             type: DataTypes.BOOLEAN,
+        },
+        pass: {
+            type: DataTypes.STRING,
+        },
+        passRepeat: {
+            type: DataTypes.STRING,
         },
         image: {
             type: DataTypes.STRING,

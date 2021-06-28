@@ -12,16 +12,18 @@ let usersController = require ('../controllers/usersController');
 
 
 
-// router.get ('/list', usersController.list);
-// router.get ('/detail/:userName', usersController.detail);
-// router.get ('/edit/:userName', usersController.edit);
+router.get ('/list', usersController.list);
+
+router.get ('/register', guestMiddleware, usersController.register);
+router.post ('/register', fileUpload.single('image'), validateRegister, usersController.processRegister);
+
+router.get ('/detail/:userName', usersController.detail);
+router.get ('/edit/:userName', usersController.edit);
 // router.put ('/edit/:userName', fileUpload.single('image'), usersController.processEdit);
-// router.get ('/register', guestMiddleware, usersController.register);
-// router.post ('/register', fileUpload.single('image'), validateRegister, usersController.processRegister);
-// router.get ('/login',guestMiddleware, usersController.login);
-// router.post ('/login', usersController.processLogin);
+router.get ('/login',guestMiddleware, usersController.login);
+router.post ('/login', usersController.processLogin);
 // router.delete('/delete/:userName', usersController.delete);
-// router.get('/logout', usersController.logout);
+router.get('/logout', usersController.logout);
 
 
 

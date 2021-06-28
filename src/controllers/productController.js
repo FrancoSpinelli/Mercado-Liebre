@@ -23,7 +23,7 @@ let productController = {
         });
     },
     create:(req,res) => {
-        res.render('product-create-form');
+        res.render('productCreateForm');
     },
     storage:(req,res) => {
         let image = 'default.jpg';
