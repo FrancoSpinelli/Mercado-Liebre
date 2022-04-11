@@ -51,8 +51,8 @@ let productController = {
             where: {id: req.params.id},
         }).then(() => res.redirect(`/products/detail/${req.params.id}`))
     },
-    delete: (req,res)=>{
-        db.Products.destroy({
+    delete: async (req,res)=>{
+        await db.Products.destroy({
             where: {id: req.params.id},
         }).then(res.redirect('/'));
     },

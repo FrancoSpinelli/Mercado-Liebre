@@ -13,7 +13,7 @@
 
 .banner{
     width: 100%;
-    margin-top: 200px;
+    margin-top: 136px;
 }
 
 .main-login{
@@ -22,7 +22,7 @@
 
 .main-login .form-login{
     width: 90%;
-    margin: 100px auto 0;
+    margin: 0 auto 0;
     display: flex;
     flex-wrap: wrap;
 }
@@ -50,8 +50,8 @@
 .main-login .form-login .divs-login .pass i{
     width: 5%;
     position: absolute;
-    top: 10px;
-    right:0px;
+    top: 8px;
+    right: 10px;
 }
 
 .main-login .form-login .control{
@@ -92,12 +92,20 @@
     display: block;
     padding: 10px;
     border-radius: 8px;
-    margin: 10px 0;
+    margin: 10px auto 20px;
 }
 
 .main-login .form-login .buttons .button{
+    background-color: #0022AA;
+    font-size: 1em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     border-radius: 8px;
+    border: none;
+    margin: 10px auto;
 }
 
 .main-login .register{
@@ -116,30 +124,57 @@
 @media (min-width: 481px){
 
     .banner{
-        margin-top: 0 ;
+        margin-top: 80px ;
     }
     
     .main-login .form-login {
         width: 65%;
+        font-size: 14px;
     }
     .main-login .form-login .nombre{
         width: 95.5%;
     }
 
     .main-login .form-login .buttons .button:hover{
-        background-color: #0022AA;
+        background-color: #39b54a;
         color: white;
+        cursor: pointer;
     }
+
+    .main-login .form-login .buttons .button{
+        font-size: 1em;
+    }
+
+    .main-login .register{
+        font-size: 14px;
+    }
+    
 }
 
 
 /* MEDIA QUERY 2 */
 
 @media (min-width: 769px){
+    
+    .banner {
+        margin-top: 105px ;
+    }
     .main-login .form-login{
-        width: 50%;
+        width: 35%;
+        font-size: 18px;
     }
     .main-login .form-login .nombre{
-        width: 97%;
+        width: 96.3%;
+    }
+    .main-login .form-login .divs-login .pass i{
+        top: 10px;
+    }
+    
+    .main-login .form-login .buttons .button{
+        font-size: 1,3em;
+    }
+
+    .main-login .register{
+        font-size: 18px;
     }
 }

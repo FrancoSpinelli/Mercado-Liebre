@@ -20,6 +20,9 @@
 body{
     text-align: left;
 }
+main {
+  background-color: #ebebeb;
+}
 .form-label {
     display: inline-block;
     font-size: 1.3em;
@@ -55,6 +58,19 @@ body{
     padding: 10px;
     border-radius: 8px;
     border: none;
-    margin-bottom: 15px;
+    margin: 30px  auto;
   }
 
+  .buy-now-button:hover {
+    cursor: pointer;
+    background-color: #39b54a;
+  }
+
+  .no-padding{
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: relative;
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+  }

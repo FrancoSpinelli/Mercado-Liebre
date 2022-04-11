@@ -4,7 +4,7 @@ const path = require ('path');
 const methodOverride = require ('method-override');
 const expressValidator = require ('express-validator');
 const session = require('express-session');
-const userLoggedMidleware = require ('./src/middlewares/userLoggedMiddleware');
+const userLoggedMiddleware = require ('./src/middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
 
 
@@ -22,8 +22,8 @@ app.use(methodOverride('_method'));
 
 // Configuración puerto en Heroku
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log('Servidor corriendo en el puerto 3000');
+app.listen(process.env.PORT || 3003, function(){
+    console.log('Servidor corriendo en el puerto 3003');
 });
 
 
@@ -40,7 +40,9 @@ app.use(session(
 
 app.use(cookies());
 
-// app.use(userLoggedMidleware);
+app.use(userLoggedMiddleware);
+
+
 
 // Rutas hacia los módulos 
 

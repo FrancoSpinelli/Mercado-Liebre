@@ -43,7 +43,6 @@ let usersController = {
                 } else {
                     if (req.file) {
                         image = req.file.filename;
-                        console.log('4');
                         
                     };
                 };
@@ -61,7 +60,7 @@ let usersController = {
     },
 
     processLogin: (req, res) =>{
-        db.Users.findAll({
+        db.Users.findOne({
             where: {userName: req.body.userName},
         }).then(function(userFound){
             if (!userFound) {
@@ -74,32 +73,33 @@ let usersController = {
                     }
                 });
             };
-            let passChecked = bscryptjs.compareSync(req.body.pass, userFound[0].pass);
+            let passChecked = bscryptjs.compareSync(req.body.pass, userFound.pass);
             if (!passChecked){
                 return res.render('login', { 
                     old: req.body.userName,
                     errors: {
                         userName: {
                             msg: 'Verificar usuario y/o contraseña'
-                        }
-                    }
+                        },
+                    },
                 });
             };
-            delete userFound.pass;
-            delete userFound.passRepeat;
-            req.session.userInSession = userFound;
+            delete userFound.dataValues.pass;
+            delete userFound.dataValues.passRepeat;
+            req.session.userInSession = userFound.dataValues;
             if (req.body.remember_user) {
                 res.cookie('userNameLogged', req.body.userName, { maxAge: (1000 * 60 * 30)});
             }
-            return res.redirect(`detail/${userFound[0].userName}`);
+            return res.redirect(`detail/${userFound.dataValues.userName}`);
         });
     },
     detail: (req,res)=>{
+        let userLogged
         db.Users.findAll({
             where: {userName: req.params.userName},
         }).then(function(userFound){
             userLogged = userFound
-            return res.render ('detail.ejs', {userFound, userLogged})
+            return res.render ('detail.ejs', {userFound: userFound[0].dataValues, userLogged})
         })
         
     },
@@ -112,32 +112,36 @@ let usersController = {
         })
     },
 
-//     processEdit: (req,res)=>{
-//         let userNameURL = req.params.userName;
-//         let userToEdit = User.findUserName(userNameURL)
-//         let image = null;
-//         if (req.file) {
-//             image = req.file.filename
-//         } else {
-//             image = userToEdit.image;
-//         }
-//         let userUpdate = {
-//             ...userToEdit,
-//             ...req.body,
-//             image: image
-//         };
-//         User.edit(userNameURL, userUpdate);
-//         return res.render (`detail`, {userFound:userUpdate, userLogged: req.session.userInSession });
-//     },
+    processEdit: (req,res)=>{
+        db.Users.findAll({
+            where: {userName: req.params.userName},
+        }).then(function(userToEdit){
+            if (req.file) {
+                image = req.file.filename
+            } else {
+                image = userToEdit.image;
+            }
+            db.Users.update({
+                ...userToEdit,
+                ...req.body,
+                image: image
+            },
+            {
+                where: {userName: req.params.userName}
+            })
+            return userToEdit
+        }).then (()=> res.redirect(`/users/detail/${req.params.userName}`))
+        
+    },
     
-//     delete: (req, res) => {
-//         let userNameURL = req.params.userName;
-//         User.delete(userNameURL);
-//         return res.redirect('/users/list');
-//     },
+    delete: (req, res) => {
+        db.Users.destroy({
+            where: {userName: req.params.userName}
+        }).then(()=> res.redirect('/users/list'))
+    },
     
     logout: (req, res) =>{
-        res.clearCookie('userNameLogged')
+        res.clearCookie('userNameLogged');
         req.session.destroy();
         res.redirect('/');
     }

@@ -1,21 +1,29 @@
 let db = require('../database/models');
 
-let userLoggedMidleware = function(req, res, next) {
+let userLoggedMiddleware = async function(req, res, next) { 
     res.locals.userIsLogged = false;
-
-    let userNameInCookie = req.cookies.userNameLogged;
-    let userInCookie = db.Users.findAll({
-        where: {userName: userNameInCookie}
-    })
-    if (userInCookie) {
-        req.session.userInSession = userInCookie;
-    };
-
-    if (req.session.userInSession){
-        res.locals.userIsLogged = true;
-        res.locals.UserLogged = req.session.userInSession;
+    try{
+        let userNameInCookie = req.cookies.userNameLogged;
+        let userInCookie;
+        if (userNameInCookie){
+            return userInCookie = await db.Users.findAll({
+                where: {userName: userNameInCookie}
+            });
+        }
+        if (userInCookie) {
+            req.session.userInSession = userInCookie;
+        };
+    
+        if (req.session.userInSession){
+            res.locals.userIsLogged = true;
+            res.locals.UserLogged = req.session.userInSession[0].dataValues;
+        }
+        next();
+    }catch(e){
+        return next();
     }
-    next();
+    
+    
 };
 
-module.exports = userLoggedMidleware;
+module.exports = userLoggedMiddleware;

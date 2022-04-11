@@ -45,11 +45,12 @@
     .footer ul{
         display: flex;
         justify-content: space-around;
+        padding: 0 15px;
     }
 
     .footer ul li{
         width: 30%;
-        font-size: 50%;
+        font-size: 60%;
     }
 
 
@@ -60,6 +61,7 @@
 
     .footer .copyright{
         padding: 30px 0;
+        font-size: 14px;
     }
 
 }

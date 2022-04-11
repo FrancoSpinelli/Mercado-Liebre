@@ -3,8 +3,8 @@
 
 let guestMiddleware = function(req, res, next){
     if (req.session.userInSession){
-        return res.redirect(`/users/detail/${req.session.userInSession[0].userName}`);
-    }
+        return res.redirect(`/users/detail/${req.session.userInSession.userName}`);
+    };
     next();
 };
 
